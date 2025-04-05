@@ -1,0 +1,19 @@
+Funcion Fibonacci (N)
+    A:=0.
+    B:=1.
+    N:=N+(-1*1).
+    Para I=0 HASTA N:
+        C:=A+B.
+        A:=B.
+        B:=C.
+        Fin.
+    Fibonacci:=A.
+Fin.
+
+funcion main(N)
+    Mostrar ('Ingrese la posicion del numero').
+    Leer(N).
+    C:=Fibonacci(N).
+    Mostrar ('El resultado es: ', C).
+fin.
+

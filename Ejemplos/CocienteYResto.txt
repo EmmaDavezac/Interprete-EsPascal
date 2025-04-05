@@ -1,0 +1,17 @@
+Funcion COCIENTE (A,B)
+Q:=0.
+R:=0.
+AUX:=A.
+MIENTRAS AUX >= B :
+Q:=Q+1.
+AUX:=AUX + (B  * -1).
+fin.
+COCIENTE:=AUX.
+fin.
+funcion principal(A,B)
+mostrar('ingrese el numerador').
+leer(A).
+mostrar('ingrese el denominador').
+leer(B).
+
+fin.  

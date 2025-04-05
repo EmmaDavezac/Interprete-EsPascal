@@ -1,0 +1,40 @@
+PROGRAMA → FUNCTION PROGRAMA_1
+PROGRAMA_1→ FUNCTION PROGRAMA_1| epsilon
+FUNCTION → FUNCTION_1 ( PARAMETROS ) BLOQUE
+FUNCTION_1 → funcion id
+PARAMETROS→ id PARAMETROS_1
+PARAMETROS_1→ , id PARAMETROS_1 | epsilon
+BLOQUE→ CUERPO fin .
+CUERPO → SENTENCIA CUERPO_1
+CUERPO_1→ SENTENCIA CUERPO_1| epsilon
+SENTENCIA→ ASIGNACION | LECTURA | ESCRITURA | IF | WHILE | FOR | CASOS_1
+ASIGNACION→ id OP_ASIG EA .
+OP_ASIG→ :=
+EA→ TH
+H→ + TH | - TH | epsilon //implementacion actual de la resta como operacion aritmetica
+T → ZY
+Y→ * ZY | / ZY | epsilon
+Z → DX | √ DX
+X→ ^DX | epsilon
+D→ constante_real |ID R |( EA )
+R→ epsilon | ( PARAMETROS_2 )
+PARAMETROS_2→ EA PARAMETROS_3
+PARAMETROS_3→ , EA PARAMETROS_3 | epsilon
+LECTURA→ leer ( id ) .
+ESCRITURA → mostrar ( A ) .
+A → constante_cadena B | id
+B→ , id | epsilon
+IF → si COND : CUERPO IF_1
+IF_1→ sino BLOQUE | fin.
+CASOS_1 -> casos : CASOS_2 fin .
+CASOS_2 -> CASO CASOS_3
+CASOS_3 -> CASO CASOS_3 | epsilon
+CASO -> COND : BLOQUE
+WHILE→ mientras COND : BLOQUE
+FOR→ para id = EA hasta EA : BLOQUE
+COND→ EE COND_1| NOT (EE COND_1) //a implementar en futuras revisiones
+COND_1→ OP_LOG COND | epsilon
+EE→ EA P
+P→ OP_REL EA
+OP_REL→ < | > | >= | <= | <> | =
+OP_LOG→ And | Or

@@ -1,0 +1,5 @@
+PROGRAM INTERPRETE_ESPASCAL;
+USES UANALIZADORSINTACTICO,crt;
+BEGIN
+     PROCESOINTERPRETE;
+end.                                    .

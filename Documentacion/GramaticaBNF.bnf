@@ -1,0 +1,25 @@
+<PROGRAMA>::= <PROGRAMA> <FUNCION> |<FUNCION>
+<FUNCION>::= <TITULO_FUNCION> “(“ <PARAMETROS_1> “)” <BLOQUE>
+<TITULO_FUNCION>::= “funcion” “id”
+<PARAMETROS_1>::= <PARAMETROS_1> “,” “id” | “id”
+<CUERPO>::= <CUERPO> <SENTENCIA>|<SENTENCIA>
+<BLOQUE>::= <CUERPO> “fin” “.”
+<SENTENCIA>::= <ASIGNACION>| <ESCRITURA> | <LECTURA>| <SI> | <PARA> | <MIENTRAS> | <CASOS>
+<ASIGNACION>::= “id” “:=” <EXP_ARIT> “.”
+<EXP_ARIT>::= <EXP_ARIT>“+”<EXP_ARIT>|<EXP_ARIT>“-”<EXP_ARIT>|<EXP_ARIT>“*”<EXP_ARIT> |<EXP_ARIT>“/”<EXP_ARIT> |<EXP_ARIT>“^”<EXP_ARIT> |”raiz​”<EXP_ARIT> |<D>
+<A>::= “(“<EXP_ARIT>”)”| “constante_real” | “constante_entera” | ”id” <B>
+<B>::= “(“<PARAMETROS_2>”)”|ε
+<PARAMETROS_2>::= <PARAMETROS_2 ”,” <EXP_ARIT> | <EXP_ARIT>
+<ESCRITURA> ::= “escribir“ “ (“ <C> ”)” “.”
+<C> ::= “constante_cadena” <D> | “id”
+<D>::= “,” “id” |ε
+<LECTURA>::= “leer” “(“ “id” “)” “.”
+<SI>::= “Si” <CONDICION>“:” <BLOQUE>| “si” <CONDICION> “:” <CUERPO> “ sino” <BLOQUE>
+<PARA>::= “para” “id” “=” <EXP_ARIT> “HASTA” <EXP_ARIT> “:” <BLOQUE>
+<MIENTRAS>::= “mientras” <CONDICION> “:” <BLOQUE>
+<CASOS> “casos” “:” <CASOS_2> “fin” “.”
+<CASOS_2>::= <CASOS_2> <CASO> | <CASO>
+<CASO>::=<CONDICION>“:” <BLOQUE>
+<CONDICION>::= <EXP_ARIT> <OP_REL> <EXP_ARIT> | <CONDICION> <OP_LOG> <CONDICION>
+<OP_REL>::= “<” | “>” | “<>” |”>=” |”<=” | “=”
+<OP_LOG>::= “and”| “or”

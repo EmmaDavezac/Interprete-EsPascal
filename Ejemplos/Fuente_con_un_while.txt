@@ -1,0 +1,13 @@
+Funcion MCM ( A , B )
+I:=0.
+J:=0.
+Mostrar('INGRESE EL PRIMER NUMERO: ').
+Leer(A).
+Mostrar('INGRESE EL SEGUNDO NUMERO: ').
+Leer(B).
+Mientras i < a:
+I:=I+1.
+J:=J +B.
+fin.
+Mostrar('EL PRODUCTO ES: ', J).
+Fin.  

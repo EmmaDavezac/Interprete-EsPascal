@@ -1,0 +1,22 @@
+Funcion mcm (a , b)
+    mostrar('ingrese el primer numero').
+    leer(a).
+    aux2:=a.
+    mostrar('ingrese el segundo numero numero').
+    leer(b).
+    aux3:=b.
+    mientras  b<> 0:
+        q:=0.
+        r:=0.
+        aux:=a.
+        mientras aux >= b :
+            q:=q+1.
+            aux:=aux + (b  * -1).
+        fin.
+        r:=a+( -1 * ( b*q)).
+        a:=b.
+        b:=r.
+        Fin.
+    mcm:=(aux2*aux3)/a.
+    mostrar('El minimo comun multiplo es: ',mcm).
+Fin.
